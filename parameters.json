@@ -1,0 +1,136 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "southeastasia"
+        },
+        "networkInterfaceName": {
+            "value": "trainning11"
+        },
+        "networkSecurityGroupName": {
+            "value": "Trainning-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                },
+                {
+                    "name": "HTTP",
+                    "properties": {
+                        "priority": 320,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "80"
+                    }
+                },
+                {
+                    "name": "HTTPS",
+                    "properties": {
+                        "priority": 340,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "443"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "virtualNetworkName": {
+            "value": "tai-resource-vnet"
+        },
+        "addressPrefixes": {
+            "value": [
+                "10.0.0.0/24"
+            ]
+        },
+        "subnets": {
+            "value": [
+                {
+                    "name": "default",
+                    "properties": {
+                        "addressPrefix": "10.0.0.0/24"
+                    }
+                }
+            ]
+        },
+        "publicIpAddressName": {
+            "value": "Trainning-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Static"
+        },
+        "publicIpAddressSku": {
+            "value": "Standard"
+        },
+        "virtualMachineName": {
+            "value": "Trainning"
+        },
+        "virtualMachineRG": {
+            "value": "tai-resource"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B1ms"
+        },
+        "adminUsername": {
+            "value": "taibeo"
+        },
+        "adminPublicKey": {
+            "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpOBKdCLIaARVeNMuHCdCsTrI0wmclpb/BWoLTfWBee0Ac2mnsdx9IrXbprbkHsYLCJsYxdTvYEaHCEAzn5HUGpstjppimhJ/BxQ6lVTJz00ZtSXrCxF104hxhjab5cuPZTSRAAZlJZTFjfj0plAHBepu/Trd2SZR4pMo/Cj1bfxEJuat+zPV4wMY8/4TG5tJGhLtG2ZVurtvyEHRqanCOFeGXSlJxkHY5DkArzCYVGZsk+EhbOkmtbwJgdquwHXA5T5LWM0nu2utwuAqI0Z+ll80KYmu1b2PR8Ta/Oba2QuA535G7YAC4FyAlrmctQhuud5vGZFN1dWxKYTQPLerUvHqa3nVdqnuz9QZut2LX+aRzIfShDTyNhMJiffCb/08wBBs/8kaoN4efEChD1nwmyMOGGIv5XGUx/70o2S0TWeHzNOayvd4Ygv5TrE9X+vvkPXnOv6hsguKDGIllVzdR8HvgiTgvOF1RSHID2synUrkwtkffRxaVKygcM8N0mpE= under@DESKTOP-NP5LPM4"
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "tairesourcediag"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "Microsoft.Storage/storageAccounts/tairesourcediag"
+        },
+        "diagnosticsStorageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "diagnosticsStorageAccountKind": {
+            "value": "Storage"
+        },
+        "autoShutdownStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownTime": {
+            "value": "12:00"
+        },
+        "autoShutdownTimeZone": {
+            "value": "SE Asia Standard Time"
+        },
+        "autoShutdownNotificationStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownNotificationLocale": {
+            "value": "en"
+        },
+        "autoShutdownNotificationEmail": {
+            "value": "tai.nguyen@episerver.com"
+        }
+    }
+}
